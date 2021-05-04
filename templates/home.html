@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+
+        {% if all_data %}
+
+        <div class="row justify-content-center">
+            <div class="col-2 text-md-center">
+                userId
+            </div>
+            <div class="col-2 text-md-center">
+                id
+            </div>
+            <div class="col-3 text-md-center">
+                title
+            </div>
+            <div class="col-5 text-md-center">
+                body
+            </div>
+        </div>
+
+        {% for d in all_data %}
+
+            <div class="row justify-content-center">
+                <div class="col-2 text-md-center">
+                    {{d.userId}}
+                </div>
+                <div class="col-2 text-md-center">
+                    {{d.ids}}
+                </div>
+                <div class="col-3 text-md-center">
+                    {{d.title}}
+                </div>
+                <div class="col-5 text-md-center">
+                    {{d.body}}
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+        {% else %}
+
+            <h3>No data</h3>
+
+        {% endif %}
+
+    </div>
+
+
+{% endblock body %}
